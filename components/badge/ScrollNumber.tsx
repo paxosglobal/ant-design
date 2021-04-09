@@ -77,7 +77,7 @@ const ScrollNumber: React.FC<ScrollNumberProps> = ({
 
   React.useEffect(() => {
     setLastCount(count);
-    let timeout: number;
+    let timeout: any;
     if (animateStarted) {
       // Let browser has time to reset the scroller before actually
       // performing the transition.
