@@ -65,13 +65,13 @@ function spaceChildren(children: React.ReactNode, needInserted: boolean) {
 }
 
 const ButtonTypes = tuple('default', 'primary', 'ghost', 'dashed', 'danger', 'link');
-export type ButtonType = (typeof ButtonTypes)[number];
+export type ButtonType = typeof ButtonTypes[number];
 const ButtonShapes = tuple('circle', 'circle-outline', 'round');
-export type ButtonShape = (typeof ButtonShapes)[number];
+export type ButtonShape = typeof ButtonShapes[number];
 const ButtonSizes = tuple('large', 'default', 'small');
-export type ButtonSize = (typeof ButtonSizes)[number];
+export type ButtonSize = typeof ButtonSizes[number];
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset');
-export type ButtonHTMLType = (typeof ButtonHTMLTypes)[number];
+export type ButtonHTMLType = typeof ButtonHTMLTypes[number];
 
 export interface BaseButtonProps {
   type?: ButtonType;
@@ -154,7 +154,7 @@ class Button extends React.Component<ButtonProps, ButtonState> {
     this.fixTwoCNChar();
 
     if (prevProps.loading && typeof prevProps.loading !== 'boolean') {
-      clearTimeout(this.delayTimeout);
+      window.clearTimeout(this.delayTimeout);
     }
 
     const { loading } = this.props;
@@ -170,7 +170,7 @@ class Button extends React.Component<ButtonProps, ButtonState> {
 
   componentWillUnmount() {
     if (this.delayTimeout) {
-      clearTimeout(this.delayTimeout);
+      window.clearTimeout(this.delayTimeout);
     }
   }
 

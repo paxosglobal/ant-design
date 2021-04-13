@@ -25,7 +25,7 @@ let currentValue;
 
 function fetch(value, callback) {
   if (timeout) {
-    clearTimeout(timeout);
+    window.clearTimeout(timeout);
     timeout = null;
   }
   currentValue = value;

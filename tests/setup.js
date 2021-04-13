@@ -16,7 +16,7 @@ if (typeof window !== 'undefined') {
 // The built-in requestAnimationFrame and cancelAnimationFrame not working with jest.runFakeTimes()
 // https://github.com/facebook/jest/issues/5147
 global.requestAnimationFrame = cb => setTimeout(cb, 0);
-global.cancelAnimationFrame = cb => clearTimeout(cb, 0);
+global.cancelAnimationFrame = cb => window.clearTimeout(cb, 0);
 
 const Enzyme = require('enzyme');
 

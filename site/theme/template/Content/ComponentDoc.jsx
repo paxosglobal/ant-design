@@ -55,7 +55,7 @@ class ComponentDoc extends React.Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.pingTimer);
+    window.clearTimeout(this.pingTimer);
   }
 
   handleExpandToggle = () => {

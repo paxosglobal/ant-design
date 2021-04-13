@@ -98,7 +98,7 @@ export default class TransferList extends React.Component<TransferListProps, Tra
   }
 
   componentWillUnmount() {
-    clearTimeout(this.triggerScrollTimer);
+    window.clearTimeout(this.triggerScrollTimer);
   }
 
   getCheckStatus(filteredItems: TransferItem[]) {

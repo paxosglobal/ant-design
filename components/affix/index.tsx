@@ -75,7 +75,7 @@ class Affix extends React.Component<AffixProps, AffixState> {
     if (target) {
       // [Legacy] Wait for parent component ref has its value.
       // We should use target as directly element instead of function which makes element check hard.
-      this.timeout = setTimeout(() => {
+      this.timeout = window.setTimeout(() => {
         addObserveTarget(target(), this);
         // Mock Event object.
         this.updatePosition();
@@ -113,7 +113,7 @@ class Affix extends React.Component<AffixProps, AffixState> {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeout);
+    window.clearTimeout(this.timeout);
     removeObserveTarget(this);
     (this.updatePosition as any).cancel();
     // https://github.com/ant-design/ant-design/issues/22683

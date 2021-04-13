@@ -53,7 +53,7 @@ export default class Wave extends React.Component<{ insertExtraNode?: boolean }>
       this.instance.cancel();
     }
     if (this.clickWaveTimeoutId) {
-      clearTimeout(this.clickWaveTimeoutId);
+      window.clearTimeout(this.clickWaveTimeoutId);
     }
 
     this.destroy = true;

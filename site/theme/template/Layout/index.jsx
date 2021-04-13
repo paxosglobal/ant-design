@@ -104,7 +104,7 @@ export default class Layout extends React.Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timer);
+    window.clearTimeout(this.timer);
   }
 
   render() {
